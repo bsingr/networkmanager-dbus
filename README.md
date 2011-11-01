@@ -2,7 +2,7 @@ THIS IS ALPHA STUFF :)
 
 see [TODOs](TODO.md)
 
-{<img src="https://secure.travis-ci.org/dpree/networkmanager-dbus.png" />}[https://secure.travis-ci.org/dpree/networkmanager-dbus]
+[![Travis-CI Build Status](https://secure.travis-ci.org/dpree/networkmanager-dbus.png)](https://secure.travis-ci.org/dpree/networkmanager-dbus)
 
 # NetworkManager-Ruby
 

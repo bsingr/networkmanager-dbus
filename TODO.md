@@ -8,3 +8,4 @@
  * different device types
  * vpn
  * ...
+* add support for signals

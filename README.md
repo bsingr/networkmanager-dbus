@@ -6,8 +6,7 @@ see [TODOs](TODO.md)
 
 This library provides a Ruby API to NetworkManager using its DBus Interface.
 
-Written using the [NetworkManager DBus API Specs v0.9](http://projects.gnome.org
-/NetworkManager/developers/api/09/spec.html)
+Written using the [NetworkManager DBus API Specs v0.9](http://projects.gnome.org/NetworkManager/developers/api/09/spec.html)
 
 ## Installation
 

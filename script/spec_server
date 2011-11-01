@@ -8,6 +8,7 @@ class RSpecRunner < MarilynRPC::Service
   register :rspec
 
   def run()
+    ENV['RSPEC_FORMAT'] = 'remote'
     `rspec`
   end
 end

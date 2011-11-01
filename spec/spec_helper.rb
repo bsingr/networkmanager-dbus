@@ -40,8 +40,16 @@ class JsonFormatter < RSpec::Core::Formatters::BaseFormatter
 end
 
 RSpec.configure do |config|
-  #config.formatter = 'JsonFormatter'
-  #config.formatter = 'Growl::RSpec::Formatter'
+  config.formatter = begin
+    case ENV['RSPEC_FORMAT']
+      when 'growl'
+        'Growl::RSpec::Formatter'
+      when 'remote'
+        'JsonFormatter'
+      else
+        'progress'
+    end
+  end
   
   config.mock_with :rr
   # or if that doesn't work due to a version incompatibility

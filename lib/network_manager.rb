@@ -23,6 +23,6 @@ module NetworkManager
   end
   
   DBusInterface.configure do |config|
-    config.service = 'org.freedesktop.NetworkManager'
+    config.interface = 'org.freedesktop.NetworkManager'
   end
 end

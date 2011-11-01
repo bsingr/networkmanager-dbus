@@ -3,6 +3,9 @@ class NetworkManager::DBus::Settings
   map_dbus :default_iface => 'org.freedesktop.NetworkManager.Settings',
              :object_path => '/org/freedesktop/NetworkManager/Settings'
   
+  property 'Hostname'
+  property 'CanModify', :boolean
+  
   def self.connections
     instance.connections
   end
@@ -17,9 +20,5 @@ class NetworkManager::DBus::Settings
   
   def hostname=(new_name)
     call('SaveHostname', new_name)
-  end
-  
-  def hostname
-    self['Hostname']
   end
 end

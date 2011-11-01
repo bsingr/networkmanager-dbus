@@ -17,11 +17,15 @@ describe "NetworkManager::DBus::Settings" do
     NetworkManager::DBus::Settings.connections.size.should == 1
   end
   
-  describe 'hostname' do
-    after :each do
+  describe 'can_modify' do
+    it 'should provide can_modify?' do
       network_manager_dbus_mock
+      NetworkManager::DBus::Settings.instance.can_modify?.should ==
+        @data.first.last['properties']['CanModify']
     end
-    
+  end
+  
+  describe 'hostname' do
     it 'should get hostname from properties' do
       network_manager_dbus_mock
       NetworkManager::DBus::Settings.instance.hostname.should ==

@@ -23,10 +23,26 @@ module DBusInterface::Class
   def instance
     @instance ||= new
   end
-
+  
+  def property(name, type = :string)
+    underscored = underscore(name)
+    define_method underscored do self[name] end
+    if type == :boolean
+      define_method "#{underscored}?" do self[name] ? true : false end
+    end
+  end
+    
 private
 
   def dbus
     @dbus
   end
+  
+  def underscore(camel_cased_word)
+    camel_cased_word.to_s.gsub(/::/, '/').
+      gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
+      gsub(/([a-z\d])([A-Z])/,'\1_\2').
+      tr("-", "_").
+      downcase
+   end
 end

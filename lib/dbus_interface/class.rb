@@ -2,10 +2,10 @@ module DBusInterface::Class
   def map_dbus(conf)
     @dbus ||= begin
       # ensure hash
-      raise ArgumentError.new "adapt_dbus must receive a hash instead of"\
+      raise ArgumentError.new "map_dbus must receive a Hash instead of "\
                               "#{conf.class}" unless conf.is_a? Hash
       # ensure :default_iface is set
-      raise ArgumentError.new "adapt_dbus must specify at least :default_iface"\
+      raise ArgumentError.new "map_dbus must specify at least :default_iface"\
                               unless conf.has_key? :default_iface
       conf
     end

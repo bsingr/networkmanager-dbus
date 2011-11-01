@@ -1,6 +1,13 @@
+THIS IS ALPHA STUFF :)
+
+see [TODOs](TODO.md)
+
 # NetworkManager-Ruby
 
 This library provides a Ruby API to NetworkManager using its DBus Interface.
+
+Written using the [NetworkManager DBus API Specs v0.9](http://projects.gnome.org
+/NetworkManager/developers/api/09/spec.html)
 
 ## Installation
 
@@ -22,7 +29,7 @@ please have a look at the `examples` folder and the `specs`.
 
 Development currently happens from my OSX machine where no dbus/networkmanager
 is running. Therefore, i hacked some scripts together to be able to run rspec
-over the wire
+over the wire.
 
 On the remote-machine (linux, dbus, networkmanager)
 
@@ -34,4 +41,4 @@ On the local-machine (osx)
 
 # License
 
-Please see file `MIT-LICENSE`. Copyright 2011 Jens Bissinger.
+Copyright 2011 Jens Bissinger. All rights reserved. [MIT-LICENSE](MIT-LICENSE)

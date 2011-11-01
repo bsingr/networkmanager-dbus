@@ -1,5 +1,7 @@
 # load spec helper
-require File.join(File.dirname(__FILE__), 'support/fixture_helper.rb')
+Dir.glob(File.join(File.dirname(__FILE__), 'support/**/*')).each do |path|
+  require path
+end
 
 # load lib
 require File.join(File.dirname(__FILE__), '../lib/network_manager')

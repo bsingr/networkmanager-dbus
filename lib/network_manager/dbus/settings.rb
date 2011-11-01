@@ -3,6 +3,13 @@ class NetworkManager::DBus::Settings
   map_dbus :default_iface => 'org.freedesktop.NetworkManager.Settings',
              :object_path => '/org/freedesktop/NetworkManager/Settings'
   
+  # TODO methods
+  # AddConnection
+  # GetConnectionByUuid
+  
+  # TODO signals
+  # PropertiesChanged
+  
   property 'Hostname'
   property 'CanModify', :boolean
   

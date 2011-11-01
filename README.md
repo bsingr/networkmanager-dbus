@@ -2,6 +2,8 @@ THIS IS ALPHA STUFF :)
 
 see [TODOs](TODO.md)
 
+{<img src="https://secure.travis-ci.org/dpree/networkmanager-dbus.png" />}[https://secure.travis-ci.org/dpree/networkmanager-dbus]
+
 # NetworkManager-Ruby
 
 This library provides a Ruby API to NetworkManager using its DBus Interface.

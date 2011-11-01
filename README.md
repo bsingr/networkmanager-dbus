@@ -7,14 +7,14 @@ This library provides a Ruby API to NetworkManager using its DBus Interface.
 Please make sure that you have `dbus` and `networkmanager` installed on the machine
 were you want to use this library. Remote DBus wasn't tested.
 
-    gem install networkmanager
+    gem install networkmanager-dbus
 
 ## Examples
 
 At the moment this is incomplete. So for now,
 please have a look at the `examples` folder and the `specs`.
 
-    require 'networkmanager'
+    require 'networkmanager-dbus'
     NetworkManager.devices.first['Interface'] # => 'eth0' or something similar
     NetworkManager.settings.hostname          # => 'your.host.name'
 

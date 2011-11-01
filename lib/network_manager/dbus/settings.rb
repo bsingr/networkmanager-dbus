@@ -4,7 +4,11 @@ class NetworkManager::DBus::Settings
              :object_path => '/org/freedesktop/NetworkManager/Settings'
   
   def self.connections
-    instance.call('ListConnections').map do |list|
+    instance.connections
+  end
+  
+  def connections
+    call('ListConnections').map do |list|
       list.map do |object_path|
         ::NetworkManager::DBus::SettingsConnection.new(object_path)
       end

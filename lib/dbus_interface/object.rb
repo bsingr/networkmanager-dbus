@@ -3,13 +3,8 @@ module DBusInterface::Object
     some_base.extend(DBusInterface::Class)
   end
   
-  def object
-    @object ||= begin
-      object = DBusInterface.service.object(object_path)
-      object.default_iface = self.class.default_iface
-      object.introspect
-      object
-    end
+  def call(method, *args)
+    object.send(method, *args)
   end
   
   def properties
@@ -36,4 +31,16 @@ module DBusInterface::Object
   def to_s
     "#{self.class} #{properties}"
   end
+
+private
+
+  def object
+    @object ||= begin
+      object = DBusInterface.service.object(object_path)
+      object.default_iface = self.class.default_iface
+      object.introspect
+      object
+    end
+  end
+
 end

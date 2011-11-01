@@ -33,8 +33,11 @@ describe "NetworkManager::DBus::Settings" do
       
       # manual spy
       new_hostname = nil
-      subject = NetworkManager::DBus::Settings.instance.object
-      stub(subject).SaveHostname { |h| new_hostname = h; new_hostname }
+      subject = NetworkManager::DBus::Settings.instance
+      stub(subject).call('SaveHostname', is_a(String)) do |method,hostn|
+        new_hostname = hostn
+        [ ]
+      end
       
       # action
       NetworkManager::DBus::Settings.instance.hostname = 'a-host-name'

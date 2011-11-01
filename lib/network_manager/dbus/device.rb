@@ -33,13 +33,13 @@ class NetworkManager::DBus::Device
   
   # @return [NetworkManager::DBus::Ip4Config] conf
   def ip4_config
-    @ip4_config ||= NetworkManager::DBus::Ip4Config.new properties['Ip4Config']
+    @ip4_config ||= NetworkManager::DBus::Ip4Config.new self['Ip4Config']
   end
   
   # @return [NetworkManager::DBus::ActiveConnection] con
   def active_connection
     @active_connection ||=
-      NetworkManager::DBus::ActiveConnection.new properties['ActiveConnection']
+      NetworkManager::DBus::ActiveConnection.new self['ActiveConnection']
   end
   
   #

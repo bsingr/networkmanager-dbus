@@ -21,7 +21,7 @@ describe "NetworkManager::DBus::Root" do
   describe "internet_connection?" do
     it 'should recognize internet_connection? if NM_STATE_CONNECTED_GLOBAL' do
       network_manager_dbus_mock
-      stub(NetworkManager::DBus::Root.instance.object).state {
+      stub(NetworkManager::DBus::Root.instance).call('state') {
         [NetworkManager::DBus::Root::NM_STATE_CONNECTED_GLOBAL]
       }
       NetworkManager::DBus::Root.internet_connection?.should be_true
@@ -29,7 +29,7 @@ describe "NetworkManager::DBus::Root" do
     
     it 'should not recognize internet_connection? if not NM_STATE_CONNECTED_GLOBAL' do
       network_manager_dbus_mock
-      stub(NetworkManager::DBus::Root.instance.object).state {
+      stub(NetworkManager::DBus::Root.instance).call('state') {
         [Time.now.to_i]
       }
       NetworkManager::DBus::Root.internet_connection?.should be_false

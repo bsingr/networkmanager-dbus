@@ -3,6 +3,8 @@ class DBusObjectMock
   def initialize(path)
     @data = merged_dbus_fixtures[path]
   end
+  def call(method, *args)
+  end
   def all_properties
     case default_iface
       when 'org.freedesktop.NetworkManager.Device.Wired'

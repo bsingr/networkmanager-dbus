@@ -1,5 +1,8 @@
 require "bundler/gem_tasks"
 
+require 'bundler'
+Bundler.require :development
+
 def pump_dumps(dumps)
   dumps.each do |obj|
     case obj['action']
@@ -40,7 +43,7 @@ namespace :spec do
   desc 'run specs on a remote server (script/spec_server)'
   task :remote do
     begin
-      client = MarilynRPC::NativeClient.connect_tcp('192.168.56.101', 8483)
+      client = ::MarilynRPC::NativeClient.connect_tcp('192.168.56.101', 8483)
       runner = client.for :rspec
       json = runner.run
       begin

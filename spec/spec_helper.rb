@@ -4,7 +4,8 @@ require File.join(File.dirname(__FILE__), 'support/fixture_helper.rb')
 # load lib
 require File.join(File.dirname(__FILE__), '../lib/network_manager')
 
-require 'json'
+require 'bundler'
+Bundler.require :development
 require 'rspec/core/formatters/base_formatter'
 class JsonFormatter < RSpec::Core::Formatters::BaseFormatter
   

@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'marilyn-rpc'
+require 'eventmachine'
+require 'growl'
+
+client = MarilynRPC::NativeClient.connect_tcp(ENV['HOST'] || 'localhost', 8483)
+runner = client.for :rspec
+results = runner.run

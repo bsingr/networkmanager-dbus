@@ -40,5 +40,15 @@ class JsonFormatter < RSpec::Core::Formatters::BaseFormatter
 end
 
 RSpec.configure do |config|
-  config.formatter = 'JsonFormatter'
+  #config.formatter = 'JsonFormatter'
+  config.formatter = 'Growl::RSpec::Formatter'
+  
+  config.mock_with :rr
+  # or if that doesn't work due to a version incompatibility
+  # config.mock_with RR::Adapters::Rspec
+end
+
+# load mocks
+Dir.glob(File.join(File.dirname(__FILE__), 'mocks/**/*')).each do |path|
+  require path unless File.directory? path
 end

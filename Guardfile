@@ -2,5 +2,8 @@
 # More info at https://github.com/guard/guard#readme
 
 guard 'shell' do
-  watch(%r{^*.(rb|yml|file)$}) { `rake spec:remote` }
+  watch(%r{^*.(rb|yml|file)$}) do
+    #{}`rake spec:remote`
+    `rspec`
+  end
 end

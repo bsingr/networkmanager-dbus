@@ -1,14 +1,4 @@
-properties:
-  Hostname: 'dev-vm'
-  CanModify: yes
-connections:
-  -
-    settings:
-      "connection":
-        "id": "Wired connection 1"
-        "uuid": "6190ee1e-c5c5-41f5-8de3-500d229970f9"
-        "timestamp": "1320083832"
-        "type": "802-3-ethernet"
-      "802-3-ethernet":
-        "s390-options": {}
-        "mac-address": [8, 0, 39, 251, 59, 16]
+"/org/freedesktop/NetworkManager/Settings":
+  properties:
+    Hostname: 'dev-vm'
+    CanModify: yes

@@ -2,18 +2,18 @@ require 'spec_helper'
 
 describe "NetworkManager::DBus::ActiveConnection" do
   before :each do
-    @devices = fixture('devices.yml')
-    @device = @devices[0]
-    @config = @device['active_connection']
+    @data = fixture('active_connections.yml')
+    @object_paths = object_paths_from_fixture('active_connections.yml')
   end
-  
+
   it 'should map interface "org.freedesktop.NetworkManager.Connection.Active"' do
     NetworkManager::DBus::ActiveConnection.default_iface.should ==
       'org.freedesktop.NetworkManager.Connection.Active'
   end
   
   it 'shoud list properties' do
-    config = NetworkManager::DBus::ActiveConnection.new @device['properties']['ActiveConnection']
-    config.properties.should == @config['properties']
+    network_manager_dbus_mock
+    con = NetworkManager::DBus::ActiveConnection.new @object_paths.first
+    con.properties.should == @data.first.last['properties']
   end
 end

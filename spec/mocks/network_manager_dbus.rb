@@ -1,0 +1,5 @@
+def network_manager_dbus_mock
+  dbus_interface_mock
+  network_manager_root_mock
+  network_manager_settings_mock
+end

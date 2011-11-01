@@ -21,8 +21,10 @@ Gem::Specification.new do |s|
   # dependencies
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
+  s.add_development_dependency "rr"
   s.add_development_dependency "guard"
   s.add_development_dependency "guard-shell"
+  s.add_development_dependency "growl-rspec"
   s.add_development_dependency "growl"
   s.add_development_dependency "json"
   s.add_development_dependency "marilyn-rpc"

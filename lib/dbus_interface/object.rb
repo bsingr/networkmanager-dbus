@@ -32,4 +32,8 @@ module DBusInterface::Object
   def [](key)
     properties[key]
   end
+  
+  def to_s
+    "#{self.class} #{properties}"
+  end
 end

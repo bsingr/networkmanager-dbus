@@ -24,10 +24,6 @@ class NetworkManager::DBus::Device
   # or LTE standards to access a cellular or wireline data network.
   NM_DEVICE_TYPE_MODEM     = 8
   
-  def to_s
-    "#{self.class} #{properties}"
-  end
-  
   def ip4_address
     @ip_addr ||= begin
       ip4_int = self['Ip4Address']

@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'marilyn-rpc'
+require 'eventmachine'
+
+class RSpecRunner < MarilynRPC::Service
+  register :rspec
+
+  def run()
+    `rspec`
+  end
+end
+
+EM.run {
+  EM.start_server "192.168.56.101", 8483, MarilynRPC::Server
+  puts "Marilyn has entered the stage, playing port 8483"
+}

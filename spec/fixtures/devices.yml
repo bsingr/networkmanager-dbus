@@ -1,0 +1,60 @@
+0:
+  properties:
+    "Interface": "eth0"
+    "Ip4Address": 1698212032
+    "Udi": "/sys/devices/pci0000:00/0000:00:03.0/net/eth0"
+    "Interface": "eth0"
+    "IpInterface": "eth0"
+    "Driver": "e1000"
+    "Capabilities": 3
+    "State": 100
+    "ActiveConnection": "/org/freedesktop/NetworkManager/ActiveConnection/0"
+    "Ip4Config": "/org/freedesktop/NetworkManager/IP4Config/1"
+    "Dhcp4Config": "/org/freedesktop/NetworkManager/DHCP4Config/0"
+    "Ip6Config": "/"
+    "Dhcp6Config": "/"
+    "Managed": yes
+    "FirmwareMissing": no
+    "DeviceType": 1
+  ethernet:
+    properties:
+      "HwAddress": "08:00:27:FB:3B:10"
+      "PermHwAddress": "08:00:27:FB:3B:10"
+      "Speed": 1000
+      "Carrier": yes
+  ip4_config:
+    0:
+      properties:
+        "Addresses": [ [1698212032, 24, 0] ]
+        "Nameservers": []
+        "WinsServers": []
+        "Domains": []
+        "Routes": []
+  dhcp4_config:
+    properties:
+      "Options":
+        "4163": "4163"
+        "1500": "1500"
+        "subnet_cidr": "24"
+        "broadcast_address": "192.168.56.255"
+        "dhcp_message_type": "5"
+        "eth0": "eth0"
+        "dhcp_lease_time": "3600"
+        "ip_address": "192.168.56.101"
+        "subnet_mask": "255.255.255.0"
+        "0": "0"
+        "202": "202"
+        "lookup-hostname": "lookup-hostname"
+        "network_number": "192.168.56.0"
+        "dhcp_server_identifier": "192.168.56.100"
+  active_connection:
+    properties:
+      "Connection": "/org/freedesktop/NetworkManager/Settings/0"
+      "SpecificObject": "/"
+      "Uuid": "9bd14d22-6da6-45d0-b68a-596c3c3297c2"
+      "Devices": ["/org/freedesktop/NetworkManager/Devices/0"]
+      "State": 2
+      "Default": no
+      "Default6": no
+      "Vpn": no 
+        

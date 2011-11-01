@@ -41,7 +41,7 @@ end
 
 RSpec.configure do |config|
   #config.formatter = 'JsonFormatter'
-  config.formatter = 'Growl::RSpec::Formatter'
+  #config.formatter = 'Growl::RSpec::Formatter'
   
   config.mock_with :rr
   # or if that doesn't work due to a version incompatibility

@@ -6,6 +6,7 @@ module DBusInterface
   end
   
   require 'dbus'
+  require File.join(File.dirname(__FILE__), 'dbus_interface/connection')
   require File.join(File.dirname(__FILE__), 'dbus_interface/class')
   require File.join(File.dirname(__FILE__), 'dbus_interface/object')
   

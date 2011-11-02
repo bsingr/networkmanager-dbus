@@ -4,11 +4,11 @@ module DBusInterface::Object
   end
   
   def call(method, *args)
-    object.send(method, *args)
+    DBusInterface::Connection.call(self.class.default_iface, object_path, method, *args)
   end
   
   def properties
-    object.all_properties
+    call('all_properties')
   end
   
   def initialize(object_path = nil)
@@ -30,17 +30,6 @@ module DBusInterface::Object
   
   def to_s
     "#{self.class} #{properties}"
-  end
-
-private
-
-  def object
-    @object ||= begin
-      object = DBusInterface.service.object(object_path)
-      object.default_iface = self.class.default_iface
-      object.introspect
-      object
-    end
   end
 
 end

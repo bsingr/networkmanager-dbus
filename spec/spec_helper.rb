@@ -57,6 +57,4 @@ RSpec.configure do |config|
 end
 
 # load mocks
-Dir.glob(File.join(File.dirname(__FILE__), 'mocks/**/*')).each do |path|
-  require path unless File.directory? path
-end
+require File.join(File.dirname(__FILE__), 'mocks/init')

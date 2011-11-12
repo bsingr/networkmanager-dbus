@@ -10,6 +10,14 @@ module DBusInterface::Class
       conf
     end
   end
+  
+  def no_properties!
+    @no_properties = true
+  end
+  
+  def no_properties?
+    defined?(@no_properties) && @no_properties ? true : false
+  end
 
   def default_iface
     dbus[:default_iface]

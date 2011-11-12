@@ -15,6 +15,8 @@ class DBusMock
         extend SettingsMock
       when /NetworkManager.Device.Wired$/
         extend EthernetDeviceMock
+      when /NetworkManager.Settings.Connection$/
+        extend SettingsConnectionMock
     end
     iface
   end

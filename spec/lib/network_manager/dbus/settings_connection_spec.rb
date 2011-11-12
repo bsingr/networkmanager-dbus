@@ -6,9 +6,17 @@ describe "NetworkManager::DBus::SettingsConnection" do
     @object_paths = object_paths_from_fixture('settings_connections.yml')
   end
   
-  it "should list properties" do
+  it "should have no properties" do
     network_manager_dbus_mock
     con = NetworkManager::DBus::SettingsConnection.new @object_paths.first
-    con.properties.should == @data.first.last['properties']
+    lambda do
+      con.properties
+    end.should raise_error(DBusInterface::Object::NoPropertiesError)
+  end
+  
+  it "should get settings" do
+    network_manager_dbus_mock
+    con = NetworkManager::DBus::SettingsConnection.new @object_paths.first
+    con.settings.should == @data.first.last['settings']
   end
 end

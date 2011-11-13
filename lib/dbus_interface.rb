@@ -4,7 +4,7 @@ module DBusInterface
   class Configuration
     attr_accessor :interface
   end
-  
+
   require 'dbus'
   require File.join(File.dirname(__FILE__), 'dbus_interface/connection')
   require File.join(File.dirname(__FILE__), 'dbus_interface/class')
@@ -13,7 +13,7 @@ module DBusInterface
   def self.system_bus
     ::DBus::SystemBus.instance
   rescue Errno::ENOENT => e
-    raise UnavailableError.new "DBus SystemBus not available!"
+    raise UnavailableError.new "DBus SystemBus not available! (#{e})"
   end
   
   def self.service

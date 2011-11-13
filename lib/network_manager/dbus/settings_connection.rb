@@ -15,7 +15,11 @@ class NetworkManager::DBus::SettingsConnection
     raise SecretsCacheInvalidError.new("Secrets cache invalid (#{e})")
   end
   
-  def update(new_settings)
+  def update(hash)
+    new_settings = hash.dup
+    unless new_settings.has_key? 'connection'
+      new_settings.merge!(settings)
+    end
     call('Update', new_settings)
   end
   

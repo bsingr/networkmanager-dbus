@@ -1,6 +1,4 @@
 module DBusInterface::Object
-  class NoPropertiesError < StandardError; end
-  
   def self.included(some_base)
     some_base.extend(DBusInterface::Class)
   end
@@ -11,7 +9,7 @@ module DBusInterface::Object
   
   def properties
     if self.class.no_properties?
-      raise NoPropertiesError.new
+      nil
     else
       call('all_properties')
     end

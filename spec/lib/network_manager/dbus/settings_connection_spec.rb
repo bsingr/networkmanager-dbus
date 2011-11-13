@@ -9,9 +9,7 @@ describe "NetworkManager::DBus::SettingsConnection" do
   it "should have no properties" do
     network_manager_dbus_mock
     con = NetworkManager::DBus::SettingsConnection.new @object_paths.first
-    lambda do
-      con.properties
-    end.should raise_error(DBusInterface::Object::NoPropertiesError)
+    con.properties.should == nil
   end
   
   it "should get settings" do

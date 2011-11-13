@@ -36,6 +36,11 @@ class NetworkManager::DBus::Device
     @ip4_config ||= NetworkManager::DBus::Ip4Config.new self['Ip4Config']
   end
   
+  # @return [NetworkManager::DBus::Ip4Config] conf
+  def dhcp4_config
+    @dhcp4_config ||= NetworkManager::DBus::Dhcp4Config.new self['Dhcp4Config']
+  end
+  
   # @return [NetworkManager::DBus::ActiveConnection] con
   def active_connection
     @active_connection ||=

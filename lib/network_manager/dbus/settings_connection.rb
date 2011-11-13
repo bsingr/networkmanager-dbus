@@ -28,4 +28,15 @@ class NetworkManager::DBus::SettingsConnection
     hash['connection']['id'] = new_id
     update(hash)
   end
+  
+  IPV4_METHOD_AUTO = 'auto'
+  IPV4_METHOD_MANUAL = 'manual'
+  
+  def ip4_auto!
+    hash = settings
+    hash['ipv4'] = {
+      'method' => IPV4_METHOD_AUTO
+    }
+    update(hash)
+  end
 end

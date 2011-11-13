@@ -1,1 +1,1 @@
-require "network_manager"
+require File.join(File.dirname(__FILE__), "network_manager")

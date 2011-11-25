@@ -1,12 +1,22 @@
 class NetworkManager::DBus::SettingsConnection
   class SecretsCacheInvalidError < StandardError; end
   
+  HW_TYPE_ETHERNET = '802-3-ethernet'
+  HW_TYPE_WIRELESS = '802-11-wireless'
+  HW_TYPE_BLUETOOTH = 'bluetooth'
+  SW_TYPE_VPN = 'vpn'
+  SW_TYPE_BRIDGE = 'bridge'
+  
   include DBusInterface::Object
   no_properties!
   map_dbus :default_iface => 'org.freedesktop.NetworkManager.Settings.Connection'
   
   def settings
     call('GetSettings').first
+  end
+  
+  def delete
+    call('Delete')
   end
   
   def secrets(name = '')
@@ -17,6 +27,14 @@ class NetworkManager::DBus::SettingsConnection
   
   def name
     settings['connection']['id']
+  end
+  
+  def uuid
+    settings['connection']['uuid']
+  end
+  
+  def type
+    settings['connection']['type']
   end
   
   def update(hash)
@@ -30,6 +48,7 @@ class NetworkManager::DBus::SettingsConnection
   def name=(new_id)
     hash = settings
     hash['connection']['id'] = new_id
+    hash.delete 'ipv4'
     update(hash)
   end
   

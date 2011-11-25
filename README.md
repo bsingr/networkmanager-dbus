@@ -43,6 +43,13 @@ On the local-machine (osx)
 
     `guard`
 
+# Thanks
+
+to the guys from IRC channel #nm at irc.freenode.net
+
+   * dbcw
+   * jklimes
+
 # License
 
 Copyright 2011 Jens Bissinger. All rights reserved. [MIT-LICENSE](MIT-LICENSE)

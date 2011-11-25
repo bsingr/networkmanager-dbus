@@ -29,5 +29,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "growl"
   s.add_development_dependency "json"
   s.add_development_dependency "marilyn-rpc"
+  s.add_runtime_dependency 'ipaddress'
   s.add_runtime_dependency "ruby-dbus"
 end

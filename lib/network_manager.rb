@@ -1,5 +1,6 @@
 # This Library provides an API based on the specs for network manager dbus api
 # found here: http://projects.gnome.org/NetworkManager/developers/api/09/spec.html
+require 'ipaddress'
 module NetworkManager  
   # generic dbus api
   require File.join(File.dirname(__FILE__), 'dbus_interface')

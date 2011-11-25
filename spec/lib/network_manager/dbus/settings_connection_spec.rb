@@ -48,7 +48,5 @@ describe "NetworkManager::DBus::SettingsConnection" do
       con.name = 'foo'
       con.name.should == 'foo'
     end
-    
-    
   end
 end

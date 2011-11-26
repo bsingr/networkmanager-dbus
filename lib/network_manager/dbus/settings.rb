@@ -4,7 +4,6 @@ class NetworkManager::DBus::Settings
              :object_path => '/org/freedesktop/NetworkManager/Settings'
   
   # TODO methods
-  # AddConnection
   # GetConnectionByUuid
   
   # TODO signals
@@ -23,6 +22,10 @@ class NetworkManager::DBus::Settings
         ::NetworkManager::DBus::SettingsConnection.new(object_path)
       end
     end.flatten
+  end
+  
+  def add_connection(connection_hash)
+    call('AddConnection', connection_hash)
   end
   
   def hostname=(new_name)

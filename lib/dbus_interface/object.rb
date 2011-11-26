@@ -4,7 +4,11 @@ module DBusInterface::Object
   end
   
   def call(method, *args)
-    DBusInterface::Connection.call(self.class.default_iface, object_path, method, *args)
+    if object_path == nil || object_path == '/'
+      nil
+    else
+      DBusInterface::Connection.call(self.class.default_iface, object_path, method, *args)
+    end
   end
   
   def properties

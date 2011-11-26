@@ -9,6 +9,13 @@ module SettingsConnectionMock
   end
   
   def Update(hash)
+    if ipv4 = hash['ipv4']
+      if addresses = ipv4['addresses']
+        if addresses.first == 'aau'
+          ipv4['addresses'] = addresses.last
+        end
+      end
+    end
     data.merge(hash)
   end
 end

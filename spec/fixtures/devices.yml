@@ -22,3 +22,20 @@
       "PermHwAddress": "08:00:27:FB:3B:10"
       "Speed": 1000
       "Carrier": yes
+"/org/freedesktop/NetworkManager/Device/1":
+  properties:
+     "Udi": "/sys/devices/pci0000:00/0000:00:03.0/net/eth1"
+     "Interface": "eth1"
+     "IpInterface": ""
+     "Driver": "e1000"
+     "Capabilities": 3
+     "Ip4Address": 0
+     "State": 30
+     "ActiveConnection": "/"
+     "Ip4Config": "/"
+     "Dhcp4Config": "/"
+     "Ip6Config": "/"
+     "Dhcp6Config": "/"
+     "Managed": yes
+     "FirmwareMissing": no
+     "DeviceType": 1

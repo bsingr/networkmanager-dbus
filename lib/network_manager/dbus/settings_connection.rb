@@ -55,24 +55,36 @@ class NetworkManager::DBus::SettingsConnection
   IPV4_METHOD_AUTO = 'auto'
   IPV4_METHOD_MANUAL = 'manual'
   
-  def ip4_auto!
+  def ip4=(ip4)
     hash = settings
-    hash['ipv4'] = {
-      'method' => IPV4_METHOD_AUTO
-    }
+    hash['ipv4'] = ip4
     update(hash)
   end
   
-  def ip4=(new_ip4)
-    hash = settings
-    hash['ipv4'] = {
+  def ip4_auto!
+    self.ip4 = {'method' => IPV4_METHOD_AUTO}
+  end
+  
+  def ip4_manual=(addresses)
+    # ensure wrapper array
+    addresses = [addresses] unless addresses.is_a? Array
+    
+    self.ip4 = {
       'method' => IPV4_METHOD_MANUAL,
-      'addresses' => ['aau', [[NetworkManager::Ip4Helper.dot_decimal_to_arpa(new_ip4).u32, 24, 0]]]
+      'addresses' => ['aau', addresses.map{|a| a.to_nm_au}]
     }
-    update(hash)
   end
   
   def ip4
-    NetworkManager::Ip4Helper.arpa_u32_to_dot_decimal(settings['ipv4']['addresses'].first.first)
+    if ipv4 = settings['ipv4']
+      if ipv4['method'] == IPV4_METHOD_MANUAL
+        address = ipv4['addresses'].first
+        NetworkManager::Ip4Config.from_nm_au *address
+      else
+        IPV4_METHOD_AUTO
+      end
+    else
+      nil
+    end
   end
 end

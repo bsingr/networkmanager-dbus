@@ -27,7 +27,8 @@ class NetworkManager::DBus::Device
   def ip4_address
     @ip_addr ||= begin
       ip4_int = self['Ip4Address']
-      NetworkManager::Ip4Helper.arpa_u32_to_dot_decimal ip4_int
+      i = NetworkManager::Ip4Config.from_nm_au ip4_int
+      i.address
     end
   end
   

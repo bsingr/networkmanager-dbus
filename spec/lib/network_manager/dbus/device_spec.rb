@@ -41,7 +41,7 @@ describe "NetworkManager::DBus::Device" do
   it "should provide ip4_address" do
     network_manager_dbus_mock
     device = NetworkManager::DBus::Device.new @object_paths.first
-    device.ip4_address.should == IPAddress::IPv4.new('192.168.56.101')
+    device.ip4_address.to_s.should == '192.168.56.101'
   end
   
   it 'should provide ip4_config' do

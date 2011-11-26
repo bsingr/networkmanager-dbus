@@ -9,7 +9,6 @@ module NetworkManager
   require File.join(File.dirname(__FILE__), 'network_manager/version')
   
   # helper
-  require File.join(File.dirname(__FILE__), 'network_manager/ip4_helper')
   require File.join(File.dirname(__FILE__), 'network_manager/ip4_config')
   
   # network manager dbus api

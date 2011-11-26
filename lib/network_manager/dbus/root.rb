@@ -2,7 +2,7 @@ class NetworkManager::DBus::Root
   include DBusInterface::Object
   map_dbus :default_iface => 'org.freedesktop.NetworkManager',
            :object_path => '/org/freedesktop/NetworkManager'
-
+  
   # Networking state is unknown.
   NM_STATE_UNKNOWN          = 0
   # Networking is inactive and all devices are disabled.
@@ -27,6 +27,10 @@ class NetworkManager::DBus::Root
         new_device(object_path)
       end
     end.flatten
+  end
+  
+  def self.activate_connection(con, dev, optional = NetworkManager::DBus::NULL_OBJECT)
+    instance.call('ActivateConnection', con.object_path, dev.object_path, optional)
   end
   
   def self.device_by_interface(interface)

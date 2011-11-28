@@ -63,5 +63,15 @@ class NetworkManager::DBus::Device
     else
       nil
     end
-  end  
+  end
+  
+  #
+  #
+  #
+  
+  # activate the given connection settings on the device
+  # @param [NetworkManager::DBus::SettingsConnection] con
+  def apply_settings(con)
+    NetworkManager::DBus::Root.activate_connection con, self
+  end
 end

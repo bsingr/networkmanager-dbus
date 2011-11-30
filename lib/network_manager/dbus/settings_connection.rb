@@ -15,6 +15,7 @@ class NetworkManager::DBus::SettingsConnection
     call('GetSettings').first
   end
   
+  # removes the connection
   def delete
     call('Delete')
   end
@@ -25,18 +26,23 @@ class NetworkManager::DBus::SettingsConnection
     raise SecretsCacheInvalidError.new("Secrets cache invalid (#{e})")
   end
   
+  # @return [String] name
   def name
     settings['connection']['id']
   end
   
+  # @return [String] uuid
   def uuid
     settings['connection']['uuid']
   end
   
+  # @return [String] type
   def type
     settings['connection']['type']
   end
   
+  # updates the connection
+  # @note this does not activate the changes on a device (re-activation is required)
   def update(hash)
     new_settings = hash.dup
     unless new_settings.has_key? 'connection'
@@ -45,6 +51,7 @@ class NetworkManager::DBus::SettingsConnection
     call('Update', new_settings)
   end
   
+  # @param [String] a new name
   def name=(new_id)
     hash = settings
     hash['connection']['id'] = new_id
@@ -55,16 +62,20 @@ class NetworkManager::DBus::SettingsConnection
   IPV4_METHOD_AUTO = 'auto'
   IPV4_METHOD_MANUAL = 'manual'
   
+  # @param [Hash]
   def ip4=(ip4)
     hash = settings
     hash['ipv4'] = ip4
     update(hash)
   end
   
+  # makes ip4 auto (use dhcp)
   def ip4_auto!
     self.ip4 = {'method' => IPV4_METHOD_AUTO}
   end
   
+  # manual ip4 settings (ip etc.)
+  # @param [Array<NetworkManager::Ip4Config>] addresses
   def ip4_manual=(addresses)
     # ensure wrapper array
     addresses = [addresses] unless addresses.is_a? Array
@@ -75,6 +86,7 @@ class NetworkManager::DBus::SettingsConnection
     }
   end
   
+  # current ipv4
   def ip4
     if ipv4 = settings['ipv4']
       if ipv4['method'] == IPV4_METHOD_MANUAL

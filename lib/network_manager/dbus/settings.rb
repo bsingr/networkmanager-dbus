@@ -16,6 +16,7 @@ class NetworkManager::DBus::Settings
     instance.connections
   end
   
+  # @return [Array<NetworkManager::DBus::SettingsConnection>] connections
   def connections
     call('ListConnections').map do |list|
       list.map do |object_path|
@@ -24,10 +25,12 @@ class NetworkManager::DBus::Settings
     end.flatten
   end
   
+  # @param [Hash] connection hash
   def add_connection(connection_hash)
     call('AddConnection', connection_hash)
   end
   
+  # @param [String] new_hostname
   def hostname=(new_name)
     call('SaveHostname', new_name)
   end

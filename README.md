@@ -13,6 +13,14 @@ Written using the NetworkManager DBus API Documentation v0.9
   * [General API](http://projects.gnome.org/NetworkManager/developers/api/09/spec.html)
   * [Details](http://projects.gnome.org/NetworkManager/developers/api/09/ref-settings.html)
 
+## Documentation
+
+Please have a look at [Documentation](http://rubydoc.info/github/dpree/networkmanager-dbus)
+
+Or build it your on your own using `yard` gem, running the command from projet dir:
+
+    yardoc
+
 ## Installation
 
 Please make sure that you have `dbus` and `networkmanager` installed on the machine

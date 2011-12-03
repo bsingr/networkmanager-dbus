@@ -20,6 +20,14 @@ class NetworkManager::DBus::Root
   # A network device is connected, with global network connectivity.
   NM_STATE_CONNECTED_GLOBAL = 70
   
+  # TODO add missing methods
+  # AddAndActivateConnection
+  # DeactivateConnection
+  # Sleep
+  # Enable
+  # GetPermissions
+  # SetLogging
+  
   # @return [Array<NetworkManager::DBus::Device>]] devices
   def self.devices
     instance.call('GetDevices').map do |list|

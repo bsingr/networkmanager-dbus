@@ -99,4 +99,8 @@ class NetworkManager::DBus::SettingsConnection
       nil
     end
   end
+  
+  def to_s
+    "#{self.class} #{self.settings.inspect}"
+  end
 end

@@ -22,4 +22,10 @@ describe "NetworkManager::DBus::Ip4Config" do
     con = NetworkManager::DBus::Ip4Config.new @object_paths.first
     con.addresses.first.address.to_s.should == '192.168.56.101'
   end
+  
+  it 'should list #nameservers' do
+    network_manager_dbus_mock
+    con = NetworkManager::DBus::Ip4Config.new @object_paths.first
+    con.nameservers.first.address.to_s.should == '10.0.0.1'
+  end
 end

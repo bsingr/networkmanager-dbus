@@ -7,4 +7,10 @@ class NetworkManager::DBus::Ip4Config
       NetworkManager::Ip4Config.from_nm_au *au
     end
   end
+  
+  def nameservers
+    self['Nameservers'].map do |address_u32|
+      NetworkManager::Ip4Config.from_nm_au address_u32
+    end
+  end
 end

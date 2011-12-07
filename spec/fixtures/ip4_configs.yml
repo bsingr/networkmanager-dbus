@@ -3,5 +3,5 @@
     "Addresses": [ [1698212032, 24, 0] ]
     "Nameservers": [16777226]
     "WinsServers": []
-    "Domains": []
+    "Domains": ['ns1.host.tld']
     "Routes": []

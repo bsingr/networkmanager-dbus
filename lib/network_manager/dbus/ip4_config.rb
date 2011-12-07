@@ -13,4 +13,8 @@ class NetworkManager::DBus::Ip4Config
       NetworkManager::Ip4::Calculations.ip4_from_u32 address_u32
     end
   end
+  
+  def domains
+    self['Domains']
+  end
 end

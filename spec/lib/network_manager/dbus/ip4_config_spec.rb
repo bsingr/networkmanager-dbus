@@ -28,4 +28,10 @@ describe "NetworkManager::DBus::Ip4Config" do
     con = NetworkManager::DBus::Ip4Config.new @object_paths.first
     con.nameservers.first.to_s.should == '10.0.0.1'
   end
+  
+  it 'should list #domains' do
+    network_manager_dbus_mock
+    con = NetworkManager::DBus::Ip4Config.new @object_paths.first
+    con.domains.should == ['ns1.host.tld']
+  end
 end

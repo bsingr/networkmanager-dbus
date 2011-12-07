@@ -91,7 +91,7 @@ class NetworkManager::DBus::SettingsConnection
     if ipv4 = settings['ipv4']
       if ipv4['method'] == IPV4_METHOD_MANUAL
         address = ipv4['addresses'].first
-        NetworkManager::Ip4Config.from_nm_au *address
+        NetworkManager::Ip4::Config.from_nm_au *address
       else
         IPV4_METHOD_AUTO
       end

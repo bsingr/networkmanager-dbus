@@ -59,7 +59,7 @@ describe "NetworkManager::DBus::SettingsConnection" do
     it 'should set ip4 manual' do
       network_manager_dbus_mock
       con = NetworkManager::DBus::SettingsConnection.new @object_paths.first
-      con.ip4_manual = NetworkManager::Ip4Config.from_dot_notation '192.168.10.66', '255.255.0.0', '192.168.10.1'
+      con.ip4_manual = NetworkManager::Ip4::Config.from_dot_notation '192.168.10.66', '255.255.0.0', '192.168.10.1'
       con.ip4.address.to_s.should == '192.168.10.66'
       con.ip4.address.netmask.should == '255.255.0.0'
       con.ip4.gateway.to_s.should == '192.168.10.1'

@@ -119,7 +119,9 @@ class NetworkManager::DBus::SettingsConnection
       if device['PermHwAddress']
         device['PermHwAddress']
       elsif device.ethernet?
-        device.ethernet.hw_address
+        hw = device.ethernet.hw_address
+        DBusInterface::Connection.clear! # this is a caching bug!! when calling #ethernet the device itself gets crrupted
+        hw
       end
     end
     if hex_str

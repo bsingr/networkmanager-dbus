@@ -65,5 +65,12 @@ describe "NetworkManager::DBus::SettingsConnection" do
       con.ip4.gateway.to_s.should == '192.168.10.1'
       con.ip4.gateway.netmask.should == '255.255.0.0'
     end
+    
+    it 'should respond to #lock_on_device' do
+      network_manager_dbus_mock
+      con = NetworkManager::DBus::SettingsConnection.new @object_paths.first
+      con.lock_on_device NetworkManager::DBus::Device.new object_paths_from_fixture('devices.yml').first
+      con.settings['802-3-ethernet']['mac-address'].should == [8, 0, 39, 251, 59, 16]
+    end
   end
 end

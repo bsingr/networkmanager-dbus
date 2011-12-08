@@ -112,6 +112,25 @@ class NetworkManager::DBus::SettingsConnection
     end
   end
   
+  # lock on given device
+  def lock_on_device(device)
+    hash = settings
+    hex_str = begin
+      if device['PermHwAddress']
+        device['PermHwAddress']
+      elsif device.ethernet?
+        device.ethernet.hw_address
+      end
+    end
+    if hex_str
+      mac_arr = NetworkManager::Mac.hex_str_to_a hex_str
+      hash[HW_TYPE_ETHERNET]['mac-address'] = mac_arr
+      update(hash)
+    else
+      raise ArgumentError.new("could not found hardware address of #{dev.inspect}")
+    end
+  end
+  
   def to_s
     "#{self.class} #{self.settings.inspect}"
   end

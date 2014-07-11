@@ -8,3 +8,13 @@
     "Default": no
     "Default6": no
     "Vpn": no
+"/org/freedesktop/NetworkManager/ActiveConnection/1":
+  properties:
+    "Connection": "/org/freedesktop/NetworkManager/Settings/1"
+    "SpecificObject": "/"
+    "Uuid": "5c251d18-476a-4671-b76f-33dc238e5d14"
+    "Devices": ["/org/freedesktop/NetworkManager/Devices/2"]
+    "State": 2
+    "Default": no
+    "Default6": no
+    "Vpn": no

@@ -15,3 +15,20 @@
       "lookup-hostname": "lookup-hostname"
       "network_number": "192.168.56.0"
       "dhcp_server_identifier": "192.168.56.100"
+"/org/freedesktop/NetworkManager/DHCP4Config/1":
+  properties:
+    "Options":
+      "4163": "4163"
+      "1500": "1500"
+      "subnet_cidr": "24"
+      "broadcast_address": "192.168.57.255"
+      "dhcp_message_type": "5"
+      "wlan0": "wlan0"
+      "dhcp_lease_time": "3600"
+      "ip_address": "192.168.57.101"
+      "subnet_mask": "255.255.255.0"
+      "0": "0"
+      "202": "202"
+      "lookup-hostname": "lookup-hostname"
+      "network_number": "192.168.57.0"
+      "dhcp_server_identifier": "192.168.57.100"

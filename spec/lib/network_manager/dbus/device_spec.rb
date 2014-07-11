@@ -31,6 +31,12 @@ describe "NetworkManager::DBus::Device" do
         @device.ethernet.class.should == NetworkManager::DBus::EthernetDevice
       end
       
+      it "should instantiate wifi devices" do
+        @device.properties[@nm_device_type] =
+          NetworkManager::DBus::Device::NM_DEVICE_TYPE_WIFI
+        @device.wifi.class.should == NetworkManager::DBus::WifiDevice
+      end
+      
       it "should not instantiate unknown device types" do
         @device.properties[@nm_device_type] = 12345123
         @device.ethernet.should == nil

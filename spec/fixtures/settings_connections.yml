@@ -13,3 +13,24 @@
       "dns": []
       "method": "manual"
       "routes": []
+"/org/freedesktop/NetworkManager/SettingsConnection/1":
+  settings:
+    "connection":
+      "id": "Wireless connection 1"
+      "uuid": "6190ee1e-c5c5-41f5-8de3-500d229970fa"
+      "timestamp": "1320094943"
+      "type": "802-11-wireless"
+    "802-3-wireless":
+      "ssid": "access Point"
+      "mode": "infrastructure"
+      "mac-address": [8, 0, 39, 251, 59, 17]
+      "security": "802-11-wireless-security"
+    "802-11-wireless-security":
+      "key-mgmt": "wpa-psk"
+      "auth-alg": "open"
+      "psk": "password"
+    "ipv4":
+      "addresses": [[1862275500, 24, 16781740]]
+      "dns": []
+      "method": "manual"
+      "routes": []

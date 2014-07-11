@@ -64,7 +64,24 @@ class NetworkManager::DBus::Device
       nil
     end
   end
-  
+
+  #
+  # WIFI
+  #
+
+  def wifi?
+    properties[NM_DEVICE_TYPE__PROPERTY] == NM_DEVICE_TYPE_WIFI
+  end
+
+  # @return [NetworkManager::DBus::WifiDevice] dev
+  def wifi
+    if wifi?
+      @wifi ||= NetworkManager::DBus::WifiDevice.new(self.object_path)
+    else
+      nil
+    end
+  end
+
   #
   #
   #

@@ -24,7 +24,7 @@ describe "NetworkManager::DBus::Root" do
       stub(NetworkManager::DBus::Root.instance).call('state') {
         [NetworkManager::DBus::Root::NM_STATE_CONNECTED_GLOBAL]
       }
-      NetworkManager::DBus::Root.internet_connection?.should be_true
+      NetworkManager::DBus::Root.internet_connection?.should eq(true)
     end
     
     it 'should not recognize internet_connection? if not NM_STATE_CONNECTED_GLOBAL' do
@@ -32,7 +32,7 @@ describe "NetworkManager::DBus::Root" do
       stub(NetworkManager::DBus::Root.instance).call('state') {
         [Time.now.to_i]
       }
-      NetworkManager::DBus::Root.internet_connection?.should be_false
+      NetworkManager::DBus::Root.internet_connection?.should eq(false)
     end
   end
 end

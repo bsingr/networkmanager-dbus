@@ -50,6 +50,10 @@ RSpec.configure do |config|
         'progress'
     end
   end
+
+  config.expect_with :rspec do |c|
+    c.syntax = [:should, :expect]  # default, enables both `should` and `expect`
+  end
   
   config.mock_with :rr
   # or if that doesn't work due to a version incompatibility

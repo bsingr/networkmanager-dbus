@@ -39,3 +39,46 @@
      "Managed": yes
      "FirmwareMissing": no
      "DeviceType": 1
+"/org/freedesktop/NetworkManager/Device/2":
+  properties:
+    "Interface": "wlan0"
+    "Ip4Address": 1698212033
+    "Udi": "/sys/devices/pci0000:00/0000:00:03.0/net/wlan0"
+    "Interface": "wlan0"
+    "IpInterface": "wlan0"
+    "Driver": "wlanDriver"
+    "Capabilities": 1
+    "State": 100
+    "ActiveConnection": "/org/freedesktop/NetworkManager/ActiveConnection/1"
+    "Ip4Config": "/org/freedesktop/NetworkManager/IP4Config/2"
+    "Dhcp4Config": "/org/freedesktop/NetworkManager/DHCP4Config/1"
+    "Ip6Config": "/"
+    "Dhcp6Config": "/"
+    "Managed": yes
+    "FirmwareMissing": no
+    "DeviceType": 2
+  wifi:
+    properties:
+      "HwAddress": "08:00:27:FB:3B:11"
+      "PermHwAddress": "08:00:27:FB:3B:11"
+      "Mode": 2
+      "Bitrate": 12000
+      "ActiveAccessPoint": "/org/freedesktop/NetworkManager/AccessPoint/2"
+      "WirelessCapabilities": 255
+"/org/freedesktop/NetworkManager/Device/3":
+  properties:
+     "Udi": "/sys/devices/pci0000:00/0000:00:03.0/net/wlan1"
+     "Interface": "wlan1"
+     "IpInterface": ""
+     "Driver": "wlanDriver"
+     "Capabilities": 3
+     "Ip4Address": 0
+     "State": 30
+     "ActiveConnection": "/"
+     "Ip4Config": "/"
+     "Dhcp4Config": "/"
+     "Ip6Config": "/"
+     "Dhcp6Config": "/"
+     "Managed": yes
+     "FirmwareMissing": no
+     "DeviceType": 2

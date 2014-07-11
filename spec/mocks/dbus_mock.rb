@@ -15,6 +15,8 @@ class DBusMock
         extend SettingsMock
       when /NetworkManager.Device.Wired$/
         extend EthernetDeviceMock
+      when /NetworkManager.Device.Wireless$/
+        extend WifiDeviceMock
       when /NetworkManager.Settings.Connection$/
         extend SettingsConnectionMock
     end

@@ -14,7 +14,7 @@ describe "NetworkManager::DBus::Settings" do
   
   it "should list connections" do
     network_manager_dbus_mock
-    NetworkManager::DBus::Settings.connections.size.should == 1
+    NetworkManager::DBus::Settings.connections.size.should == 2
   end
   
   describe 'can_modify' do

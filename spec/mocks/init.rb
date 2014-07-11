@@ -3,6 +3,7 @@ require File.join(File.dirname(__FILE__), 'dbus/root_mock')
 require File.join(File.dirname(__FILE__), 'dbus/settings_mock')
 require File.join(File.dirname(__FILE__), 'dbus/settings_connection_mock')
 require File.join(File.dirname(__FILE__), 'dbus/ethernet_device_mock')
+require File.join(File.dirname(__FILE__), 'dbus/wifi_device_mock')
 
 require File.join(File.dirname(__FILE__), 'system_bus_mock')
 require File.join(File.dirname(__FILE__), 'system_bus_service_mock')

@@ -5,3 +5,10 @@
     "WinsServers": []
     "Domains": ['ns1.host.tld']
     "Routes": []
+"/org/freedesktop/NetworkManager/IP4Config/2":
+  properties:
+    "Addresses": [ [1698212032, 24, 0] ]
+    "Nameservers": [16777226]
+    "WinsServers": []
+    "Domains": ['ns1.host.tld']
+    "Routes": []
